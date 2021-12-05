@@ -39,10 +39,11 @@ function changeQuestion() {
         document.getElementById("score").textContent = 'Score ' + score + '/' + (100 * total);
         let sound_source = document.getElementById("sound_source"); sound_source.src = q_text;         
         var sound = document.getElementById("question_sound"); sound.load(); sound.play();
+        document.getElementById("op1source").src = opt1; document.getElementById("op1source").load();
+        document.getElementById("op2source").src = opt1; document.getElementById("op2source").load();
+        document.getElementById("op3source").src = opt1; document.getElementById("op3source").load();
         document.getElementById("op4source").src = opt1; document.getElementById("op4source").load();
-        document.getElementById("option2").textContent = opt2;
-        document.getElementById("option3").textContent = opt3;
-        document.getElementById("option4").textContent = opt4;
+
         document.getElementById("resource").value = quiz_topic;
 
         
