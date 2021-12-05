@@ -2,12 +2,12 @@ var questions = [
 
     {
         question: "sounds/elephant9.mp3",
-        choices: ["/javascript-quiz-master/photos/images.jpg", "Ronnie James Dio", "James Hetfield", "Lemmy Kilmister"],
-        answer: "/javascript-quiz-master/photos/images.jpg",
+        choices: ["photos/images.jpg", "Ronnie James Dio", "James Hetfield", "Lemmy Kilmister"],
+        answer: "photos/images.jpg",
     }, {
         question: "sounds/lion4.mp3",
-        choices: ["/javascript-quiz-master/photos/lion.jpg", "Funk rock", "Black metal", "Alternative rock"],
-        answer: "/javascript-quiz-master/photos/lion.jpg",
+        choices: ["photos/lion.jpg", "Funk rock", "Black metal", "Alternative rock"],
+        answer: "photos/lion.jpg",
     }, {
         question: "sounds/mixkit-wolf-howling-1775.mp3",
         choices: ["Piece of Mind", "The Number of the Beast", "Fear of the Dark", "Iron Maiden"],
