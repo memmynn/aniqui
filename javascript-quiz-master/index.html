@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Quiz | Play </title>
+    <meta name="viewport" content="width=1000, initial-scale=1.0, maximum-scale=1.0">
+    <link href="css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/custom.css" rel="stylesheet" />
+    <link href="css/flat-ui.css" rel="stylesheet" />
+
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+
+
+    <script src="js/vendor/jquery.min.js"></script>
+    <script src="js/flat-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+
+
+    <script src="/timer.js"></script>
+
+
+    <script>
+        
+        //Following hides the Result graph and shows the first question
+        window.onload = function() {
+            $("#graph").hide(); // hide result graph
+            changeQuestion(); // show first question
+
+        };
+
+    </script>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+      <script src="dist/js/vendor/html5shiv.js"></script>
+      <script src="dist/js/vendor/respond.min.js"></script>
+      <![endif]-->
+      <script src="/questions.js"></script>
+      <script src="/quix.js"></script>
+</head>
+
+<body style="padding: 0 15px;">
+    <div class="" style="width:100%;">
+
+        <div id="canvas">
+            <div style="height:2px">
+                <div id="particles-js">
+                    <hr class="colorgraph">
+                </div>
+            </div>
+            <div>
+
+                <div id="particles-js" style="position:relative;">
+
+                    <center>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <br>
+                                <button>click to listen
+                                    <img src="megafon.png" id="megafon" class="img-responsive" style="height:150px; width:150px;" /></button>
+                                
+                            </div>
+
+                            <div class="col-md-4">
+                                <h3 style="font-family: 'Pacifico', cursive; font-weight:100;" id="resource">Guess the Animal</h3>
+                                <h6 style="font-weight:500;" id="q_id">
+                        Question 3/5</h6>
+
+                                <h4 style="font-weight:500; color:rgb(246, 227, 20)" id="score">
+                          Score: 0</h4>
+                                <br>
+                            </div>
+
+                            <div class="col-md-4">
+                                <br>
+                                <h5>Total time elapsed:</h5>
+
+                                <h5 id="timer" style="color:white"><time>00:00:00</time></h5>
+                            </div>
+
+                        </div>
+
+                        <audio id="question_sound">
+                            
+                            <source id="sound_source" type="audio/mp3">    
+                        </audio>
+                        <br>
+                        <div class="btn-group-justified" style="vertical-align: middle">
+                            <div class="row">
+                                <div class="col-md-4 "></div>
+                                <div class="col-md-2">
+                                    <button id="option1" class="option  btn btn-embossed btn-block btn-hg btn-info" onclick="changeColor(this)">
+                                        <img src="" id="op1source" class="img-responsive" style="height:150px; width:150px;" />
+                                    </button>
+                                    <br>
+                                </div>
+                                <div class="col-md-2 ">
+                                    <button id="option2" class="option btn btn-embossed btn-block btn-hg btn-info" onclick="changeColor(this)">
+                                        <img src="" id="op2source" class="img-responsive" style="height:150px; width:150px;" />
+                                    </button>
+                                    <br>
+                                </div>
+                                <div class="col-md-4 "></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 "></div>
+                                <div class="col-md-2">
+                                    <button id="option3" class="option  btn btn-embossed btn-block btn-hg btn-info" onclick="changeColor(this)">
+                                        <img src="" id="op3source" class="img-responsive" style="height:150px; width:150px;" />
+                                    </button>
+                                    <br>
+                                </div>
+                                <div class="col-md-2 ">
+                                    <button id="option4" class=" option  btn btn-embossed btn-block btn-hg btn-info" onclick="changeColor(this)">
+                                        <img src="" id="op4source" class="img-responsive" style="height:150px; width:150px;" /></button>
+                                    <br>
+                                </div>
+                                <div class="col-md-4 ">
+                                </div>
+                            </div>
+
+
+                    </center>
+                    <hr class="colorgraph">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div align="center" id="graph">
+
+           
+            <center>
+                <h4>Results:</h4></center>
+            <br>
+            <canvas id="income" width="450" height="360"></canvas>
+            <div align="center" id="placeholder"></div>
+        </div>
+
+        <script>
+            function showGraph() {
+                $('#canvas').remove();
+                $("#graph").show();
+                var count_questions = total; //fetch number of questions
+                var labels1 = [];
+                var str = "Q ";
+                for (var i = 0; i < count_questions; i++) {
+                    labels1[i] = str.concat((i + 1).toString());
+                }
+
+                var data = {
+                    labels: labels1,
+                    datasets: [{
+                        label: "My Stats",
+                        fillColor: "rgba(0,0,0,1)",
+                        strokeColor: "rgba(0,128,0,1)",
+                        pointColor: "rgba(256,256,256,1)",
+                        pointStrokeColor: "rgba(256,256,256,1)",
+                        pointHighlightFill: "rgba(256,256,256,1)",
+                        pointHighlightStroke: "rgba(256,256,256,1)",
+                        data: scores
+                    }]
+                };
+
+                var income = document.getElementById("income").getContext("2d");
+                var myLineChart = new Chart(income).Line(data, {
+                    //  scaleOverride : true,
+                    //Boolean - Whether to show horizontal lines (except X axis)
+                    scaleShowHorizontalLines: true,
+
+                    //Boolean - Whether to show vertical lines (except Y axis)
+                    scaleShowVerticalLines: true,
+                    //scaleStartValue: 0 ,
+                    scaleLineColor: "rgba(256,256,256,.1)",
+                    bezierCurve: false
+                });
+                $("#placeholder").html("<br><h4>Total Score: " + score + "/" + (total * 100) + "<br><br>Total Time: " + time_tot + "</h4>");
+
+                // Uncomment this function in order to save quiz
+                //saveQuiz();
+            }
+
+            (function () {
+                alert("Guess the animal from sound!")                
+            });
+           
+        </script>
+    <script src="js/particles-js.js"></script>
+    <script src="js/particles-js-config.js"></script>
+    <script>
+    let megafon = document.getElementById("megafon"); megafon.addEventListener("click", function () {
+        console.log("clicked");
+        var playPromise = document.getElementById('question_sound')
+        playPromise.load();
+        playPromise.play();
+
+// In browsers that don’t yet support this functionality,
+// playPromise won’t be defined.
+if (playPromise !== undefined) {
+  playPromise.then(function() {
+    var playPromise = document.getElementById('question_sound')
+        playPromise.load();
+        playPromise.play();
+    // Automatic playback started!
+  }).catch(function(error) {
+    // Automatic playback failed.
+    // Show a UI element to let the user manually start playback.
+  });
+}
+    })</script> 
+</body>
+
+
+<script>
+    $(document).ready(function() {
+        $("body").css("background-color", "#000000");
+        $("body").css("color", "#ffffff");
+        alert("Guess the animal from sound!");
+    });
+
+
+    boxes = $('.btn-hg');
+    maxHeight = Math.max.apply(
+        Math, boxes.map(function() {
+            return $(this).height();
+        }).get());
+    boxes.height(maxHeight + 30);
+</script>
+
+</html>
