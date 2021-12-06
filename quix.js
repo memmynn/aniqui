@@ -20,7 +20,6 @@ function changeQuestion() {
         var element2 = document.getElementById("canvas");
         element2.style.display = 'none';
         showGraph();
-        Document.body.append(replay); replay.onclick="replayFn()";
         return;
     };
 
@@ -62,7 +61,7 @@ function changeQuestion() {
         // Also increments scores if necessary
         function changeColor(obj) {
             var selected_ans = obj.firstElementChild.src;
-            if (selected_ans.includes(questions[curr_index].answer)) {
+            if (selected_ans.includes(questions[curr_index].answer)) {//seçilen cevap doğru mu
                 $(obj).addClass('btn-success');
                 score += 100;
             } else {
