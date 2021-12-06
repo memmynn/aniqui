@@ -14,10 +14,13 @@ function changeQuestion() {
     $('.myb').prop('disabled', false);
 
     if (curr_index >= total) {//sorular bittiyse
+        shuffle(questions);//soruların sırasını değiştir
+        questions.map(element => shuffle(element.choices));
         time_tot = document.getElementById("timer").textContent;
         var element2 = document.getElementById("canvas");
         element2.style.display = 'none';
         showGraph();
+        Document.body.append(replay); replay.onclick="replayFn()";
         return;
     };
 

@@ -43,4 +43,8 @@ function shuffle(array) {
     return array;
   };
 
-shuffle(questions);
+shuffle(questions); questions.map(element => shuffle(element.choices));
+
+function replayFn() {
+    window.location.href = window.location.href;
+};
