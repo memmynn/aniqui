@@ -13,13 +13,14 @@ function changeQuestion() {
     curr_index++;
     $('.myb').prop('disabled', false);
 
-    if (curr_index >= total) {
+    if (curr_index >= total) {//sorular bittiyse
         time_tot = document.getElementById("timer").textContent;
         var element2 = document.getElementById("canvas");
         element2.style.display = 'none';
         showGraph();
+        return;
+    };
 
-    } else {
         // Reset the color of option buttons
         var elements = document.getElementsByClassName('option');
         for (i = 0; i < elements.length; i++) {
@@ -37,19 +38,21 @@ function changeQuestion() {
         var opt4 = q_obj.choices[3];
         document.getElementById("q_id").textContent = 'Question ' + (curr_index + 1) + '/' + total;
         document.getElementById("score").textContent = 'Score ' + score + '/' + (100 * total);
-        let sound_source = document.getElementById("sound_source"); sound_source.src = q_text;         
-        var sound = document.getElementById("question_sound"); sound.load(); sound.play();
-        document.getElementById("op1source").src = opt1; document.getElementById("op1source").load();
-        document.getElementById("op2source").src = opt1; document.getElementById("op2source").load();
-        document.getElementById("op3source").src = opt1; document.getElementById("op3source").load();
-        document.getElementById("op4source").src = opt1; document.getElementById("op4source").load();
+        let sound_source = document.getElementById("sound_source"); sound_source.src = q_text; //audio'nun source elementi         
+        var sound = document.getElementById("question_sound"); sound.load(); sound.play();//audio
+
+        //şıkların yüklenmesi
+        document.getElementById("op1source").src = opt1; //document.getElementById("op1source").load();
+        document.getElementById("op2source").src = opt2; //document.getElementById("op2source").load();
+        document.getElementById("op3source").src = opt3; //document.getElementById("op3source").load();
+        document.getElementById("op4source").src = opt4; //document.getElementById("op4source").load();
 
         document.getElementById("resource").value = quiz_topic;
 
         
 
 
-    }
+    
 };
 
 // Used to check clicked answer and change color to red or green accordingly by adding and removing the respective class.
