@@ -1,18 +1,18 @@
 var questions = [
 
-    {
+    {id: "elephant",
         question: "sounds/elephant9.mp3",
         choices: ["photos/images.jpg", "photos/wolf.jpg", "James Hetfield", "Lemmy Kilmister"],
         answer: "photos/images.jpg",
-    }, {
+    }, {id: "lion",
         question: "sounds/lion4.mp3",
         choices: ["photos/lion.jpg", "Funk rock", "Black metal", "Alternative rock"],
         answer: "photos/lion.jpg",
-    }, {
+    }, {id: "tiger",
         question: "sounds/Tiger7.mp3",
         choices: ["photos/lion.jpg", "photos/tiger.jpg", "photos/images.jpg", "Iron Maiden"],
         answer: "photos/tiger.jpg",
-    }, {
+    }, {id: "wolf",
         question: "sounds/mixkit-wolf-howling-1775.mp3",
         choices: ["photos/tiger.jpg", "photos/wolf.jpg", "1980", "1978"],
         answer: "photos/wolf.jpg",
