@@ -84,8 +84,9 @@ function changeQuestion() {
             setTimeout(function() {
                 $("#canvas").fadeOut();
                 setTimeout(function() {
-                     $("#canvas").fadeIn("slow" );changeQuestion();
-                }, 1000);
+                    setTimeout(changeQuestion(),0);
+                    $("#canvas").fadeIn("slow" );
+                }, 1350);
 
             }, 1500);
             scores.push(score); // Add cumulative score to score array
