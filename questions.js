@@ -43,7 +43,27 @@ answer: "photos/zebra.png",
 question: "sounds/alligator.mp3",
 choices: [],
 answer: "photos/alligator.png",
-}];
+},{id: "deer",/////
+question: "sounds/deer.mp3",
+choices: [],
+answer: "photos/deer.png",
+},{id: "hare",/////
+question: "sounds/hare.mp3",
+choices: [],
+answer: "photos/hare.png",
+},{id: "chimpanzee",/////
+question: "sounds/chimpanzee.mp3",
+choices: [],
+answer: "photos/chimpanzee.png",
+},{id: "cougar",/////
+question: "sounds/cougar.mp3",
+choices: [],
+answer: "photos/cougar.png",
+},{id: "gorilla",/////
+question: "sounds/gorilla.mp3",
+choices: [],
+answer: "photos/gorilla.png",
+},];
 
 var questions;
 function randomAr(array) {//array'in rastgele öğesinden özellik almak
