@@ -63,6 +63,42 @@ answer: "photos/cougar.png",
 question: "sounds/gorilla.mp3",
 choices: [],
 answer: "photos/gorilla.png",
+},{id: "antelope",
+question: "sounds/antelope.mp3",
+choices: [],
+answer: "photos/antelope.png",
+},{id: "boar",/////
+question: "sounds/boar.mp3",
+choices: [],
+answer: "photos/boar.png",
+},{id: "dolphin",/////
+question: "sounds/dolphin.mp3",
+choices: [],
+answer: "photos/dolphin.png",
+},{id: "fox",/////
+question: "sounds/fox.mp3",
+choices: [],
+answer: "photos/fox.png",
+},{id: "frog",/////
+question: "sounds/frog.mp3",
+choices: [],
+answer: "photos/frog.png",
+},{id: "python",/////
+question: "sounds/python.mp3",
+choices: [],
+answer: "photos/python.png",
+},{id: "roe",/////
+question: "sounds/roe.mp3",
+choices: [],
+answer: "photos/roe.png",
+},{id: "sea lion",/////
+question: "sounds/sea lion.mp3",
+choices: [],
+answer: "photos/sea lion.png",
+},{id: "whale",/////
+question: "sounds/whale.mp3",
+choices: [],
+answer: "photos/whale.png",
 },];
 
 var questions;
